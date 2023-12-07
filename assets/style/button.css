@@ -1,0 +1,28 @@
+.button {
+  width: 100%;
+  transition: background-color 200ms ease 0s, opacity 0.01s ease 400ms;
+  background-color: rgb(19, 216, 246);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.button > span {
+  color: rgb(1, 1, 1);
+  font-size: 0.8125rem;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.button.defaultSize {
+  min-width: 195px;
+  max-width: 195px;
+  width: 195px;
+  height: 56px;
+  max-height: 56px;
+}
+.btn-canvas-container {
+  position: absolute;
+  top: -4.5px;
+  left: -5px;
+}
