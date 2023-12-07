@@ -5,17 +5,15 @@
       <BannerHomeBanner />
     </section>
     <!-- News section -->
-    <section
-      class="news-section"
-      style="height: 400px; background-color: black"
-    >
-      <NewsHomeNews />
+    <section class="news-section">
+     <div class="news-wrapper">
+        <NewsHomeNews />
+        <NewsViewsAll />
+     </div>
     </section>
   </div>
 </template>
 
 <style scoped>
-.banner-section {
-  margin-top: 80px;
-}
+@import url("../assets/style/homepage.css");
 </style>

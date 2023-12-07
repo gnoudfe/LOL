@@ -35,7 +35,11 @@
         <img src="/img/lmht.png" alt="lien minh huyen thoai" />
       </div>
       <div class="canvas-container">
-        <CanvasBorderItem canvasWidth="2254" canvasHeight="854" />
+        <CanvasBorderItem
+          canvasWidth="2254"
+          canvasHeight="854"
+          :canvasBanner="true"
+        />
       </div>
       <div class="banner-btn-container">
         <Button canvasWidth="307" canvasHeight="99" />

@@ -3,7 +3,7 @@
     ref="canvas"
     :width="props.canvasWidth"
     :height="props.canvasHeight"
-    style="height: 569.792px; width: 1502.67px"
+    :class="{ 'canvas-banner': props.canvasBanner, 'canvas-news': props.canvasNews }"
   >
   </canvas>
 </template>
@@ -17,6 +17,14 @@ const props = defineProps({
   },
   canvasHeight: {
     type: String,
+    required: true,
+  },
+  canvasBanner: {
+    type: Boolean,
+    required: true,
+  },
+  canvasNews: {
+    type: Boolean,
     required: true,
   },
 });
@@ -52,3 +60,14 @@ onMounted(() => {
   }
 });
 </script>
+
+<style scoped>
+.canvas-banner {
+  height: 569.792px;
+  width: 1502.67px;
+}
+.canvas-news {
+  height: 202px;
+  width: 465px;
+}
+</style>
