@@ -9,7 +9,6 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
 const props = defineProps({
   canvasWidth: {
     type: String,
@@ -21,11 +20,9 @@ const props = defineProps({
   },
   canvasBanner: {
     type: Boolean,
-    required: true,
   },
   canvasNews: {
     type: Boolean,
-    required: true,
   },
 });
 
@@ -40,7 +37,6 @@ onMounted(() => {
     const width = canvas.value.width - 30;
     const height = canvas.value.height;
     const cutSize = 60; // Adjust the corner radius as needed
-
     // Draw the rectangle with a cut top-right corner
     ctx.beginPath();
     ctx.moveTo(x, y);
@@ -52,7 +48,7 @@ onMounted(() => {
     // Set a transparent background
     ctx.fillStyle = "rgba(0, 0, 0, 0)"; // Transparent black (Change '0' for transparency)
     ctx.fill();
-
+    
     // Stroke the border if needed
     ctx.strokeStyle = "#d1d1d1"; // Change color as needed
     ctx.lineWidth = 2;
@@ -71,3 +67,9 @@ onMounted(() => {
   width: 465px;
 }
 </style>
+
+
+
+
+
+

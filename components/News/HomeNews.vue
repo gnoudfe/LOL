@@ -14,13 +14,13 @@
           {{ item.description }}
         </p>
       </div>
-      <div class="canvas-container">
+      <!-- <div class="canvas-container">
         <CanvasBorderItem
           canvasWidth="698"
           canvasHeight="303"
           :canvasNews="true"
         />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

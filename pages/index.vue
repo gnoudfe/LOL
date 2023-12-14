@@ -6,10 +6,17 @@
     </section>
     <!-- News section -->
     <section class="news-section">
-     <div class="news-wrapper">
+      <div class="news-wrapper">
         <NewsHomeNews />
         <NewsViewsAll />
-     </div>
+      </div>
+    </section>
+
+    <section class="champion-section">
+      <div class="champion-wrapper">
+        <ChampionHomeChampion />
+      </div>
+      <ChampionHomeSelect />
     </section>
   </div>
 </template>

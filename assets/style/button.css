@@ -26,3 +26,58 @@
   top: -4.5px;
   left: -5px;
 }
+
+.champion-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #d0a85c;
+  max-height: 31px;
+  border: none;
+  outline: none;
+  min-width: 230px;
+  padding: 12px 25px;
+  cursor: pointer;
+}
+
+.champion-btn.play {
+  margin-left: 20px;
+  background-color: #0bc6e3;
+}
+.champion-btn:before,
+.champion-btn:after {
+  height: 15px;
+  width: 15px;
+  background: white;
+  position: absolute;
+  content: "";
+  transition: all 0.2s ease;
+}
+.champion-btn:before {
+  top: 0;
+  left: 0;
+  border: none;
+  outline: none;
+  transform: rotate(49deg) translate(-71%);
+}
+.champion-btn:after {
+  bottom: 0;
+  right: 0;
+  border: none;
+  outline: none;
+  transform: rotate(49deg) translate(71%);
+}
+.champion-btn:hover:before,
+.champion-btn:hover:after {
+  height: 0;
+  width: 0;
+}
+
+.champion-btn > span {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
