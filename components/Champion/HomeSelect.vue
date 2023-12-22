@@ -75,79 +75,18 @@
     <div class="select-champion-right">
       <div class="select-champ-wrapper">
         <div
+          v-for="champ in champImage"
+          :key="champ.id"
           class="select-champion-img-container"
           :class="{
-            'show-champ': currentChampSelect === 1,
-            'hide-champ': currentChampSelect !== 1,
+            'hide-champ': currentChampSelect !== champ.id && champ.type !== 2,
+            'show-champ': currentChampSelect === champ.id && champ.type !== 3,
+            'show-champ-2': currentChampSelect === champ.id && champ.type === 3,
+            'hide-champ-2': currentChampSelect !== champ.id && champ.type === 2,
           }"
         >
           <img
-            src="/img/assasin.png"
-            alt="champion img"
-            class="select-champion-img"
-          />
-        </div>
-        <div
-          class="select-champion-img-container"
-          :class="{
-            'show-champ': currentChampSelect === 2,
-            'hide-champ': currentChampSelect !== 2,
-          }"
-        >
-          <img
-            src="/img/yasou.png"
-            alt="champion img"
-            class="select-champion-img"
-          />
-        </div>
-        <div
-          class="select-champion-img-container"
-          :class="{
-            'show-champ-2': currentChampSelect === 3,
-            'hide-champ': currentChampSelect !== 3,
-          }"
-        >
-          <img
-            src="/img/lux.png"
-            alt="champion img"
-            class="select-champion-img"
-          />
-        </div>
-        <div
-          class="select-champion-img-container"
-          :class="{
-            'show-champ': currentChampSelect === 4,
-            'hide-champ': currentChampSelect !== 4,
-          }"
-        >
-          <img
-            src="/img/jinx.png"
-            alt="champion img"
-            class="select-champion-img"
-          />
-        </div>
-        <div
-          class="select-champion-img-container"
-          :class="{
-            'show-champ-2': currentChampSelect === 5,
-            'hide-champ': currentChampSelect !== 5,
-          }"
-        >
-          <img
-            src="/img/thresh.png"
-            alt="champion img"
-            class="select-champion-img"
-          />
-        </div>
-        <div
-          class="select-champion-img-container"
-          :class="{
-            'show-champ': currentChampSelect === 6,
-            'hide-champ': currentChampSelect !== 6,
-          }"
-        >
-          <img
-            src="/img/leona.png"
+            :src="champ.img"
             alt="champion img"
             class="select-champion-img"
           />
@@ -166,6 +105,39 @@
 </template>
 
 <script setup>
+const champImage = reactive([
+  {
+    id: 1,
+    img: "/img/assasin.png",
+    type: 2,
+  },
+  {
+    id: 2,
+    img: "/img/yasou.png",
+    type: 3,
+  },
+  {
+    id: 3,
+    img: "/img/lux.png",
+    type: 2,
+  },
+  {
+    id: 4,
+    img: "/img/jinx.png",
+    type: 3,
+  },
+  {
+    id: 5,
+    img: "/img/thresh.png",
+    type: 2,
+  },
+  {
+    id: 6,
+    img: "/img/leona.png",
+    type: 3,
+  },
+]);
+
 const champVids = reactive([
   {
     id: 1,
@@ -239,10 +211,10 @@ const resizeCanvas = () => {
   const lineRadius = mainRadius; // Radius for the lines around the main circle
 
   for (let i = 0; i < numLines; i++) {
-    const angle = (i * (2 * Math.PI)) / numLines + performance.now() / 900; // Adding time-based animation
+    const angle = (i * (2 * Math.PI)) / numLines + performance.now() / 1000; // Adding time-based animation
     ctx.beginPath();
-    ctx.arc(centerX, centerY, lineRadius, angle, angle + 0.9); // Adjust the angle to draw a small arc
-    ctx.lineWidth = 4; // Adjust line width as desired
+    ctx.arc(centerX, centerY, lineRadius, angle, angle + 1.2); // Adjust the angle to draw a small arc
+    ctx.lineWidth = 3; // Adjust line width as desired
     ctx.strokeStyle = "#C9A45F"; // Set line color to red
     ctx.stroke();
     ctx.closePath();
@@ -275,6 +247,7 @@ const championTypes = [
   { id: 5, name: "HỖ TRỢ" },
   { id: 6, name: "ĐỠ ĐÒN" },
 ];
+
 const handleSelectChamp = (id) => {
   currentChampSelect.value = id;
 };

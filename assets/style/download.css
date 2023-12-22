@@ -1,0 +1,50 @@
+.download-section-wrapper {
+  position: relative;
+  height: 100vh;
+
+  background: rgb(7, 18, 26);
+  overflow: hidden;
+}
+
+.download-video-opacity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(7, 18, 26);
+  z-index: 2;
+}
+.download-video-container {
+  width: 100%;
+  height: 100%;
+}
+.download-video-container > video {
+  width: 100%;
+  height: 100%;
+}
+
+.download-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  min-width: 195px;
+  height: 56px;
+  font-family: "Beaufor", sans-serif;
+  color: rgb(1, 1, 1);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  transition: color 0.3s ease;
+  background-color: #13d8f6;
+  z-index: 5;
+}
+.download-btn:hover {
+  background-color: #5bddf1;
+}

@@ -3,7 +3,10 @@
     ref="canvas"
     :width="props.canvasWidth"
     :height="props.canvasHeight"
-    :class="{ 'canvas-banner': props.canvasBanner, 'canvas-news': props.canvasNews }"
+    :class="{
+      'canvas-banner': props.canvasBanner,
+      'canvas-news': props.canvasNews,
+    }"
   >
   </canvas>
 </template>
@@ -48,9 +51,9 @@ onMounted(() => {
     // Set a transparent background
     ctx.fillStyle = "rgba(0, 0, 0, 0)"; // Transparent black (Change '0' for transparency)
     ctx.fill();
-    
+
     // Stroke the border if needed
-    ctx.strokeStyle = "#d1d1d1"; // Change color as needed
+    ctx.strokeStyle = "rgb(108, 111, 116)"; // Change color as needed
     ctx.lineWidth = 2;
     ctx.stroke();
   }
@@ -67,9 +70,3 @@ onMounted(() => {
   width: 465px;
 }
 </style>
-
-
-
-
-
-

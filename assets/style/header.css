@@ -1,12 +1,12 @@
 .header-wrapper {
   height: 80px;
   display: block;
-  background-color: var(--black-color);
+  background-color: rgb(17, 17, 17);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 100;
 }
 .header-items-left {
   display: flex;
@@ -64,7 +64,6 @@
   border-radius: 2px;
   background-color: rgb(0, 160, 186);
 }
-
 
 .header-btn-play {
   text-align: center;

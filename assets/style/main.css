@@ -1,4 +1,4 @@
-@import url('./fontFace.css');
+@import url("./fontFace.css");
 :root {
   --white-color: #fff;
   --black-color: #000;
@@ -17,7 +17,6 @@
 }
 
 body {
-  min-height: 100vh;
   font-family: "Neue", sans-serif;
 }
 

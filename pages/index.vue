@@ -18,6 +18,42 @@
       </div>
       <ChampionHomeSelect />
     </section>
+
+    <section class="champ-skin-section">
+      <div>
+        <ChampSkin />
+      </div>
+    </section>
+
+    <section class="mode-section">
+      <div class="mode-wrapper">
+        <ModePlay />
+      </div>
+    </section>
+
+    <section class="start-section">
+      <div>
+        <StartYourJourney />
+      </div>
+    </section>
+
+    <section class="reprentnews-section">
+      <div>
+        <RepresentNews />
+      </div>
+    </section>
+
+    <section class="dowloadGame-section">
+      <div>
+        <DownloadGame />
+      </div>
+    </section>
+
+    <section class="navigation-section">
+      <div>
+        <Navigation />
+      </div>
+    </section>
   </div>
 </template>
 

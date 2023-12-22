@@ -250,7 +250,7 @@
   top: 0;
   width: 100%;
   max-height: 880px;
-  animation-duration: 1600ms;
+  animation-duration: 1400ms;
   animation-delay: 0ms;
   animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -259,28 +259,46 @@
   height: 100%;
 }
 
+
+.select-champion-img-container.hide-champ {
+  clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
+  animation-name: hide-champ;
+}
+.select-champion-img-container.hide-champ-2 {
+  clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
+  animation-name: hide-champ-2;
+}
 .select-champion-img-container.show-champ {
+  clip-path: polygon(0% 100%, 0% -100%, 200% 100%);
   animation-name: show-champ;
-  opacity: 1;
 }
 .select-champion-img-container.show-champ-2 {
+  clip-path: polygon(100% 0%, -100% 0%, 100% 200%);
   animation-name: show-champ-2;
-  opacity: 1;
-}
-.select-champion-img-container.hide-champ {
-  opacity: 0;
 }
 
-@keyframes show-champ {
+
+@keyframes hide-champ {
   0% {
+    clip-path: polygon(100% 0%, 100% 150%, -100% -50%);
+  }
+  100% {
     clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
   }
 
+  
+}
+
+@keyframes hide-champ-2 {
+  0% {
+    clip-path: polygon(0% 100%, 150% 100%, -100% -100%);
+  }
   100% {
-    clip-path: polygon(100% 0%, 100% 200%, -100% 0%);
+    clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
   }
 }
-@keyframes show-champ-2 {
+
+@keyframes show-champ {
   0% {
     clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
   }
@@ -289,6 +307,16 @@
     clip-path: polygon(0% 100%, 0% -100%, 200% 100%);
   }
 }
+@keyframes show-champ-2 {
+  0% {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
+  }
+
+  100% {
+    clip-path: polygon(100% 0%, -100% 0%, 100% 200%);
+  }
+}
+
 
 .champ-vid-container {
   position: absolute;

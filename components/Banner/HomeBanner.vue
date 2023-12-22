@@ -20,7 +20,7 @@
     </video>
     <div class="banner-inner-container">
       <video
-        preload="metadata"
+        preload="none"
         style="object-fit: cover; object-position: center center"
         autoplay
         loop
