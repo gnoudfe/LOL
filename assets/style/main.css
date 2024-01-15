@@ -33,18 +33,32 @@ video {
 }
 
 p {
-  color: var(--text-color);
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   letter-spacing: 0.08em;
+}
+h2 {
+  font-size: 24px;
+  color: #000;
+  font-weight: 700;
+}
+h3 {
+  font-size: 18px;
+  color: #000;
+  font-weight: 700;
 }
 
 menu,
 ol,
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  padding-left: 30px;
+}
+a {
+  text-decoration: none;
+  color: rgb(1, 1, 1);
+}
+li {
+  margin: 10px 0;
 }
 /* ::-webkit-scrollbar {
   display: none;
@@ -54,4 +68,107 @@ ul {
 .flex {
   display: flex;
   align-items: center;
+}
+
+.context-designers {
+  max-width: 400px;
+  margin-top: 10px;
+}
+
+.context-designer > img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.context-designer {
+  display: flex;
+}
+.header-primary > h2,
+#patch-mythic-shop-rotation,
+#patch-clash---aram-cup,
+#patch-aram-balance-changes,
+#patch-patch-highlights,
+#patch-arena-returns,
+#patch-upcoming-skins-and-chromas,
+#patch-champions,
+#patch-cast-at-maximum-range-toggle {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Beaufor", sans-serif;
+  letter-spacing: 2.5px;
+  line-height: 1;
+  color: rgb(208, 168, 92);
+  margin: 0px;
+  font-style: italic;
+  margin: 20px 0;
+}
+.reference-link > img {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.change-title {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-left: 20px;
+}
+.change-title > a {
+  color: #fff;
+}
+em > a {
+  color: rgb(11, 198, 227);
+}
+
+.content-border {
+  margin-top: 40px;
+}
+.change-detail-title.ability-title > img {
+  width: 51px;
+  height: 51px;
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: middle;
+  margin-top: 20px;
+}
+.blockquote.context {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  font-style: italic;
+  font-size: 15px;
+}
+strong {
+  font-weight: 900;
+}
+.gs-container.default-2-col {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 1.78571%;
+}
+.skin-box {
+  width: 50%;
+  padding: 20px 1.78571%;
+}
+
+.content-border {
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.skin-title > a {
+  display: inline;
+  color: rgb(255, 255, 255);
+  font-weight: 200;
+  padding-bottom: 3px;
+  line-height: 2;
+  border-bottom: 2px solid rgb(11, 198, 227);
 }

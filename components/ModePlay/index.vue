@@ -1,5 +1,10 @@
 <template>
   <div class="mode-play-container">
+    <div class="mode-play-btn-wrapper mobile">
+      <h3>RẤT NHIỀU CÁCH</h3>
+      <h2>CHƠI</h2>
+      <button><nuxt-link to="/register"> CHƠI NGAY </nuxt-link></button>
+    </div>
     <div class="mode-play-img-wrapper">
       <div
         class="mode-play-img"
@@ -27,7 +32,11 @@
           ></path>
         </svg>
       </div>
-      <div class="mode-video-wrapper">
+      <div
+        ref="videoContainer"
+        class="mode-video-wrapper"
+        :class="{ 'first-show': isAccess }"
+      >
         <!-- video 1-->
         <div
           v-for="video in videos"
@@ -35,7 +44,13 @@
           class="mode-video-container"
           :class="{ 'active-video': currentThumnailMap === video.id }"
         >
-          <video :src="video.src" preload="none" loop muted autoplay></video>
+          <video
+            :src="video.src"
+            preload="metadata"
+            loop
+            muted
+            autoplay
+          ></video>
         </div>
       </div>
 
@@ -43,7 +58,7 @@
         <div class="mode-play-btn-wrapper">
           <h3>RẤT NHIỀU CÁCH</h3>
           <h2>CHƠI</h2>
-          <button>CHƠI NGAY</button>
+          <button><nuxt-link to="/register"> CHƠI NGAY </nuxt-link></button>
         </div>
         <div>
           <div
@@ -80,12 +95,43 @@
         </div>
       </div>
     </div>
-
+    <!-- mobile only -->
+    <div class="mode-video-select-mobile-container">
+      <div class="mode-video-select-inner-container-mobile">
+        <div
+          class="mode-video-select-img-mobile-container"
+          v-for="item in thumbnails"
+          :key="item.id"
+          @click="handleSelectMap(item.id)"
+          :class="{ 'active-map': currentThumnailMap === item.id }"
+        >
+          <img :src="item.img" alt="mode play image" />
+        </div>
+      </div>
+      <div class="mode-mobile-button-container">
+        <span class="mode-mobile-name">DAU TRUONG CHAN LY</span>
+      </div>
+      <div
+        class="mode-mobile-description-container"
+        v-for="item in descriptions"
+        :key="item.id"
+        :class="{ 'active-des': currentThumnailMap === item.id }"
+      >
+        <h3>{{ item.title }}</h3>
+        <p>
+          {{ item.des }}
+        </p>
+      </div>
+    </div>
     <span class="champ-skin-text-annouce">CHẾ ĐỘ CHƠI</span>
   </div>
 </template>
 
 <script setup>
+import { handleAccess } from "../../utils/handleAccess";
+const isAccess = ref(false);
+const videoContainer = ref(null);
+
 const images = reactive([
   {
     id: 1,
@@ -153,6 +199,7 @@ const thumbnails = reactive([
     title: "ĐẤU TRƯỜNG CHÂN LÝ",
   },
 ]);
+
 
 const handleSelectMap = (id) => {
   currentThumnailMap.value = id;
@@ -230,6 +277,7 @@ const resizeCanvas = () => {
 onMounted(() => {
   calculateCanvasSize();
   resizeCanvas();
+  handleAccess(videoContainer.value, isAccess);
   resizeObserver = new ResizeObserver(resizeCanvas);
   resizeObserver.observe(canvasContainer.value);
   window.addEventListener("resize", resizeCanvas);

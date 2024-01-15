@@ -3,5 +3,9 @@
   <Header />
   <slot />
   <Footer />
+
   <!-- Footer -->
 </template>
+
+<script setup>
+</script>

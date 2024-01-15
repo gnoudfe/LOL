@@ -29,14 +29,20 @@
       </div>
     </div>
 
-    <div ref="champInfor" class="champ-skin-type-infor-wrapper">
+    <div
+      ref="champInfor"
+      class="champ-skin-type-infor-wrapper"
+      :class="{ 'first-show': isAccess }"
+    >
       <h3 class="champ-skin-type-heading">HẠ GỤC KẺ ĐỊCH</h3>
       <h2 class="champ-skin-type-title">MỘT CÁCH SANG CHẢNH</h2>
       <p class="champ-skin-type-para">
         Thay đổi diện mạo các vị tướng yêu thích với trang phục để tạo nên điểm
         nhấn của riêng bạn.
       </p>
-      <button class="champ-skin-type-button">Chơi ngay</button>
+      <nuxt-link to="/register">
+        <button class="champ-skin-type-button">Chơi ngay</button>
+      </nuxt-link>
     </div>
 
     <span class="champ-skin-text-annouce">TRANG PHỤC TƯỚNG</span>
@@ -44,10 +50,14 @@
 </template>
 
 <script setup>
+import { handleAccess } from "../../utils/handleAccess";
 const champSkin = ref(null);
 const champInfor = ref(null);
+const isAccess = ref(false);
 const background = ref(null);
+
 const handleMouseMoveParallax = (event) => {
+  if (window.innerWidth < 768) return;
   const champSkinElement = champSkin.value;
   const champInforElement = champInfor.value;
 
@@ -58,14 +68,6 @@ const handleMouseMoveParallax = (event) => {
     champInforElement.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
   }
 };
-
-onMounted(() => {
-  window.addEventListener("mousemove", handleMouseMoveParallax);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("mousemove", handleMouseMoveParallax);
-});
 
 const images = reactive([
   {
@@ -94,10 +96,6 @@ const updateImages = () => {
   }, 3000);
 };
 
-onMounted(() => {
-  updateImages();
-});
-
 const diamondCanvas = ref(null);
 
 const diamondAnimation = () => {
@@ -125,7 +123,14 @@ const diamondAnimation = () => {
   }
 };
 onMounted(() => {
+  updateImages();
   diamondAnimation();
+  handleAccess(champInfor.value, isAccess, null);
+  window.addEventListener("mousemove", handleMouseMoveParallax);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("mousemove", handleMouseMoveParallax);
 });
 </script>
 

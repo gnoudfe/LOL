@@ -1,3 +1,4 @@
+@import url("./animation.css");
 .banner-blur-container {
   position: relative;
 }
@@ -28,6 +29,7 @@
   top: 80px;
   left: 50%;
   transform: translateX(-50%);
+  animation: fadeIn 3s ease;
 }
 .banner-btn-container {
   bottom: 25%;
@@ -39,4 +41,40 @@
   position: absolute;
   top: -20px;
   left: 10px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+  .video-hid-in-mobile {
+    display: none;
+  }
+  .banner-inner-container {
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+  }
+  .banner-inner-container > video {
+    border-radius: 0;
+  }
+  .banner-blur-container {
+    padding-bottom: 50%;
+  }
+  .banner-name-game-container {
+    top: 30px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .banner-inner-container {
+    padding: 0 20px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

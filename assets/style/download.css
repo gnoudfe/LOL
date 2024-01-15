@@ -48,3 +48,24 @@
 .download-btn:hover {
   background-color: #5bddf1;
 }
+
+@media only screen and (max-width: 768px) {
+  .download-section-wrapper {
+    height: 69vh;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .download-section-wrapper {
+    height: 69vh;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

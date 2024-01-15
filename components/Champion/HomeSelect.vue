@@ -1,5 +1,19 @@
 <template>
   <div class="select-champion-container">
+    <!-- mobile only -->
+    <div class="mobile-select-champion-contain">
+      <button
+        class="mobile-select-button"
+        v-for="championType in championTypes"
+        :key="championType.id"
+        @click="handleSelectChamp(championType.id)"
+      >
+        <span
+          :class="{ 'is-active': currentChampSelect === championType.id }"
+          >{{ championType.name }}</span
+        >
+      </button>
+    </div>
     <div class="select-champion-left">
       <div class="select-champion-bottom-border"></div>
       <div class="select-champion">
@@ -79,8 +93,8 @@
           :key="champ.id"
           class="select-champion-img-container"
           :class="{
-            'hide-champ': currentChampSelect !== champ.id && champ.type !== 2,
-            'show-champ': currentChampSelect === champ.id && champ.type !== 3,
+            'hide-champ': currentChampSelect !== champ.id,
+            'show-champ': currentChampSelect === champ.id,
             'show-champ-2': currentChampSelect === champ.id && champ.type === 3,
             'hide-champ-2': currentChampSelect !== champ.id && champ.type === 2,
           }"
@@ -223,21 +237,6 @@ const resizeCanvas = () => {
   requestAnimationFrame(resizeCanvas); // Loop the animation
 };
 
-onMounted(() => {
-  calculateCanvasSize();
-  resizeCanvas();
-  resizeObserver = new ResizeObserver(resizeCanvas);
-  resizeObserver.observe(canvasContainer.value);
-  window.addEventListener("resize", resizeCanvas);
-});
-
-onUnmounted(() => {
-  if (resizeObserver) {
-    resizeObserver.disconnect();
-  }
-  window.removeEventListener("resize", resizeCanvas);
-});
-
 const currentChampSelect = ref(1);
 const championTypes = [
   { id: 1, name: "SÁT THỦ" },
@@ -261,6 +260,21 @@ const champButtonPositions = {
 };
 const champButtonPosition = computed(() => {
   return champButtonPositions[currentChampSelect.value] || "6.5%";
+});
+
+onMounted(() => {
+  calculateCanvasSize();
+  resizeCanvas();
+  resizeObserver = new ResizeObserver(resizeCanvas);
+  resizeObserver.observe(canvasContainer.value);
+  window.addEventListener("resize", resizeCanvas);
+});
+
+onUnmounted(() => {
+  if (resizeObserver) {
+    resizeObserver.disconnect();
+  }
+  window.removeEventListener("resize", resizeCanvas);
 });
 </script>
 

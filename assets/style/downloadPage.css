@@ -1,0 +1,209 @@
+@import url("./animation.css");
+.download-page-wrapper {
+  height: 100vh;
+  overflow: hidden;
+}
+.download-container {
+  height: 100%;
+  position: relative;
+}
+.download-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  opacity: 0.8;
+  z-index: 1;
+}
+.download-background-container {
+  height: 100%;
+}
+.download-background-container > video {
+  height: 100%;
+  object-fit: cover;
+}
+.download-container::after {
+  background-image: url("/img/hangtag.svg");
+  content: "";
+  display: block;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: 18px;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  height: 200px;
+  top: 0;
+}
+
+.homepage-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+  z-index: 2;
+}
+.homepage {
+  display: block;
+  max-width: 150px;
+  width: 150px;
+}
+.homepage-container > a > img {
+  object-fit: cover;
+  width: 100%;
+}
+.content-download-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  max-width: 1000px;
+  padding: 0 30px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.download-heading-title {
+  color: #fff;
+
+  font-size: 84px;
+  text-align: center;
+  width: 100%;
+  display: block;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  line-height: 1.16;
+  user-select: none;
+  margin-bottom: 20px;
+  animation: show-text 1.5s ease;
+}
+
+.divider-image-container {
+  text-align: center;
+}
+
+.download-game-button {
+  padding: 30px 40px;
+  margin: 54px 0;
+  background: linear-gradient(180deg, #0596aa 0, #005a82);
+  font-weight: 700;
+  color: #cdfafa;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  line-height: 1;
+  border: none;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.11);
+  transition: color 0.2s;
+  font-size: 20px;
+  outline: none;
+  animation: show-text 1.5s ease;
+}
+
+.download-game-button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #111;
+  z-index: -1;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+}
+.download-game-button::after {
+  content: "";
+  display: block;
+  background: url("/img/button-bg-pattern.png") repeat-x 0 0;
+  background-size: auto 100%;
+  background-position: 0 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  animation: button-background 60s linear infinite;
+  animation-play-state: paused;
+  will-change: background-position;
+  transition: 0.4s ease;
+}
+.download-game-button:hover {
+  color: #cdfafa;
+}
+.download-game-button:hover::after {
+  opacity: 0.5;
+  animation-play-state: running;
+}
+@keyframes button-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.register-page {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #c4b998;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  animation: fadeIn 2s ease;
+}
+.register-page:hover {
+  color: #e9e5d9;
+}
+
+.download-sub-heading {
+  color: #d5b26e;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.16;
+  margin: 0 0 20px;
+  color: #c8aa6e;
+
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.success-msg {
+  color: green;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .download-heading-title {
+    font-size: 43px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

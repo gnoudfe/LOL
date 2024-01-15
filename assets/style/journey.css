@@ -1,3 +1,4 @@
+@import url("./animation.css");
 .start-wrapper {
   position: relative;
   min-height: 800px;
@@ -26,6 +27,11 @@
   text-align: center;
   position: absolute;
   right: 8%;
+  opacity: 0;
+}
+.style_content-container.first-show {
+  opacity: 1;
+  animation: show-text 2s ease;
 }
 
 .style_content-title {
@@ -37,7 +43,6 @@
   font-size: 1.5rem;
   color: #ffffff;
   font-family: "Beaufor", sans-serif;
-
 }
 .style_content-heading {
   font-weight: 800;
@@ -48,7 +53,6 @@
   font-size: 56px;
   color: #ffffff;
   font-family: "Beaufor", sans-serif;
-  
 }
 .style_content-des {
   line-height: 1.6;
@@ -61,7 +65,7 @@
   letter-spacing: 0.08em;
   font-weight: 400;
   font-family: "Beaufor", sans-serif;
-
+  color: #fff;
 }
 .start-btn-container {
   margin-top: 40px;
@@ -120,4 +124,74 @@
   position: absolute;
   right: -18px;
   bottom: 6px;
+}
+
+@media only screen and (max-width: 768px) {
+  .start-wrapper-items {
+    flex-direction: column;
+  }
+  .style_map-container {
+    width: 100%;
+    transform: translateX(0);
+  }
+  .style_content-container {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .champ-skin-text-annouce {
+    display: none;
+  }
+  .style_content-title {
+    font-size: 16px;
+  }
+  .style_content-heading {
+    font-size: 43px;
+    margin-top: 10px;
+  }
+  .start-btn-container {
+    margin-top: 20px;
+  }
+  .start-btn {
+    min-width: 130px;
+    font-size: 11px;
+    height: 40px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .start-wrapper-items {
+    flex-direction: column;
+  }
+  .style_map-container {
+    width: 100%;
+    transform: translateX(0);
+  }
+  .style_content-container {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .champ-skin-text-annouce {
+    display: none;
+  }
+  .style_content-title {
+    font-size: 16px;
+  }
+  .style_content-heading {
+    font-size: 43px;
+    margin-top: 10px;
+  }
+  .start-btn-container {
+    margin-top: 0;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

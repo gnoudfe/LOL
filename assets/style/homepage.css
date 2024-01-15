@@ -48,3 +48,44 @@
   background-repeat: repeat;
   background-size: contain;
 }
+
+@media only screen and (max-width: 768px) {
+  .news-section {
+    padding-top: 0px;
+    padding: 0 20px;
+  }
+  .champ-skin-section {
+    margin-top: 100px;
+    background: #000;
+    display: block;
+  }
+  .mode-section {
+    overflow-x: hidden;
+    height: unset;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .news-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+  }
+  .mode-section {
+    overflow-x: hidden;
+    height: unset;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .mode-section {
+    overflow-x: hidden;
+    height: unset;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

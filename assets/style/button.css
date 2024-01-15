@@ -1,3 +1,5 @@
+@import url("./animation.css");
+
 .button {
   width: 100%;
   transition: background-color 200ms ease 0s, opacity 0.01s ease 400ms;
@@ -5,6 +7,7 @@
   outline: none;
   border: none;
   cursor: pointer;
+  animation: fadeIn 1s ease;
 }
 .button > span {
   color: rgb(1, 1, 1);
@@ -80,4 +83,33 @@
   font-weight: 500;
   text-align: center;
   color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 768px) {
+  .button.defaultSize {
+    min-width: 110px;
+    max-width: 110px;
+    width: 110px;
+    height: 35px;
+    max-height: 35px;
+  }
+  .button > span {
+    color: rgb(1, 1, 1);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

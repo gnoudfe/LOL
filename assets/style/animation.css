@@ -1,0 +1,205 @@
+@keyframes show-text {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
+  }
+  100% {
+    clip-path: polygon(0% 0%, 200% 0%, 0% 200%);
+  }
+}
+
+@keyframes show-text-2 {
+  0% {
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
+  }
+  100% {
+    clip-path: polygon(100% 100%, -200% 100%, 100% -200%);
+  }
+}
+
+@keyframes show-item {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes show-item-reverse {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes loading-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@-moz-keyframes loading-rotate {
+  to {
+    -moz-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@-o-keyframes loading-rotate {
+  to {
+    -o-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes loading-rotate {
+  to {
+    -webkit-transform: rotate(1turn);
+    -moz-transform: rotate(1turn);
+    -o-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@-webkit-keyframes loading-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40px;
+  }
+  to {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120px;
+  }
+}
+
+@-moz-keyframes loading-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40px;
+  }
+  to {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120px;
+  }
+}
+
+@-o-keyframes loading-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40px;
+  }
+  to {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120px;
+  }
+}
+
+@keyframes loading-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40px;
+  }
+  to {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120px;
+  }
+}
+
+@keyframes hide-champ {
+  0% {
+    clip-path: polygon(100% 0%, 100% 150%, -100% -50%);
+  }
+  100% {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
+  }
+}
+
+@keyframes hide-champ-2 {
+  0% {
+    clip-path: polygon(0% 100%, 150% 100%, -100% -100%);
+  }
+  100% {
+    clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
+  }
+}
+
+@keyframes show-champ {
+  0% {
+    clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0% 100%, 0% -100%, 200% 100%);
+  }
+}
+@keyframes show-champ-2 {
+  0% {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
+  }
+
+  100% {
+    clip-path: polygon(100% 0%, -100% 0%, 100% 200%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show-video {
+  0% {
+    -webkit-clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
+    clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
+  }
+  100% {
+    -webkit-clip-path: polygon(0% 100%, 0% -100%, 200% 100%);
+    clip-path: polygon(0% 100%, 0% -100%, 200% 100%);
+  }
+}
+@keyframes hide-video {
+  0% {
+    -webkit-clip-path: polygon(100% 0%, 100% 200%, -100% 0%);
+    clip-path: polygon(100% 0%, 100% 200%, -100% 0%);
+  }
+  100% {
+    -webkit-clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
+    clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
+  }
+}
+@keyframes infinteCircle {
+  0% {
+    transform: scale3d(0.985, 0.985, 1) rotate(0deg);
+  }
+  50% {
+    transform: scale3d(1, 1, 1) rotate(180deg);
+  }
+  100% {
+    transform: scale3d(0.985, 0.985, 1) rotate(360deg);
+  }
+}

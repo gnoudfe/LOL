@@ -1,7 +1,20 @@
+@import url("./animation.css");
+
 .champion-heading-container {
   text-align: center;
   margin-top: 130px;
 }
+.champion-heading-container.first-show .champion-description,
+.champion-heading-container.first-show .champion-btn-container,
+.champion-heading-container.first-show .champion-title {
+  opacity: 1;
+  animation: show-text 3s ease;
+}
+.champion-heading-container.first-show .champion-heading {
+  opacity: 1;
+  animation: show-text-2 3s ease;
+}
+
 .champion-heading {
   font-size: 1.5rem;
   line-height: 1;
@@ -9,15 +22,17 @@
   letter-spacing: 0.05em;
   font-style: italic;
   font-family: "Beaufor", sans-serif;
+  opacity: 0;
 }
 .champion-title {
-  font-size: 56px;
+  font-size: 112px;
   line-height: 1;
   font-style: italic;
   display: block;
   margin-top: 10px;
   font-family: "Beaufor", sans-serif;
   font-weight: 900;
+  opacity: 0;
 }
 .champion-description {
   position: relative;
@@ -30,13 +45,14 @@
   letter-spacing: 0.03em;
   line-height: 1.7;
   color: rgb(1, 1, 1);
-  /* transition: opacity 500ms ease-out 400ms; */
+  opacity: 0;
 }
 .champion-btn-container {
   margin-top: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
 }
 .select-champion {
   position: relative;
@@ -253,70 +269,31 @@
   animation-duration: 1400ms;
   animation-delay: 0ms;
   animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
 }
 .select-champion-img {
   width: 100%;
   height: 100%;
 }
 
-
 .select-champion-img-container.hide-champ {
-  clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
   animation-name: hide-champ;
+  z-index: -1;
 }
 .select-champion-img-container.hide-champ-2 {
-  clip-path: polygon(0% 0%, 0% 0%, 0% 0%);
   animation-name: hide-champ-2;
+  z-index: -1;
 }
 .select-champion-img-container.show-champ {
   clip-path: polygon(0% 100%, 0% -100%, 200% 100%);
   animation-name: show-champ;
+  z-index: 1000000000000;
 }
 .select-champion-img-container.show-champ-2 {
   clip-path: polygon(100% 0%, -100% 0%, 100% 200%);
   animation-name: show-champ-2;
+  z-index: 1000000000000;
 }
-
-
-@keyframes hide-champ {
-  0% {
-    clip-path: polygon(100% 0%, 100% 150%, -100% -50%);
-  }
-  100% {
-    clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
-  }
-
-  
-}
-
-@keyframes hide-champ-2 {
-  0% {
-    clip-path: polygon(0% 100%, 150% 100%, -100% -100%);
-  }
-  100% {
-    clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
-  }
-}
-
-@keyframes show-champ {
-  0% {
-    clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
-  }
-
-  100% {
-    clip-path: polygon(0% 100%, 0% -100%, 200% 100%);
-  }
-}
-@keyframes show-champ-2 {
-  0% {
-    clip-path: polygon(100% 0%, 100% 0%, 100% 0%);
-  }
-
-  100% {
-    clip-path: polygon(100% 0%, -100% 0%, 100% 200%);
-  }
-}
-
 
 .champ-vid-container {
   position: absolute;
@@ -333,7 +310,181 @@
   display: none;
   pointer-events: none;
 }
-
+.mobile-select-champion-contain {
+  display: none;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  border-top: 1px solid rgb(186, 194, 204);
+  border-bottom: 1px solid rgb(186, 194, 204);
+}
+.mobile-select-button {
+  margin-left: 20px;
+  width: 16.66667%;
+  height: 100%;
+  padding: 10px 0;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.mobile-select-button > span {
+  color: rgb(186, 194, 204);
+  text-transform: uppercase;
+  font-size: 11px;
+  transition: color 300ms ease;
+}
 .champ-vid.show-vid {
   display: block;
+}
+span.is-active {
+  color: #000;
+}
+
+@media only screen and (max-width: 768px) {
+  .champion-heading {
+    font-size: 16px;
+  }
+  .champion-title {
+    font-size: 43px;
+  }
+  .champion-description {
+    font-size: 14px;
+  }
+  .champion-btn-container {
+    flex-direction: column;
+  }
+  .champion-btn {
+    margin-top: 10px;
+  }
+  .select-champion-container {
+    flex-direction: column;
+    transform: translateY(0);
+  }
+  .select-champion-left {
+    display: none;
+  }
+
+  .champion-btn.play {
+    margin-left: 0;
+  }
+  .champ-vid-container {
+    display: none;
+  }
+  .mobile-select-champion-contain {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+  }
+  .select-champion-right {
+    width: 100%;
+    max-height: none;
+    transform: translateX(0);
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .champion-heading {
+    font-size: 16px;
+  }
+  .champion-title {
+    font-size: 43px;
+  }
+  .champion-description {
+    font-size: 14px;
+  }
+  .champion-btn-container {
+    flex-direction: column;
+  }
+  .champion-btn {
+    margin-top: 10px;
+  }
+  .select-champion-container {
+    flex-direction: column;
+    transform: translateY(0);
+  }
+  .select-champion-left {
+    display: none;
+  }
+  .mobile-select-button > span {
+    color: rgb(186, 194, 204);
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .champion-btn.play {
+    margin-left: 0;
+  }
+  .champ-vid-container {
+    display: none;
+  }
+  .mobile-select-champion-contain {
+    display: flex;
+    align-items: center;
+  }
+  .select-champion-right {
+    width: 100%;
+    max-height: none;
+    transform: translateX(0);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .champion-heading {
+    font-size: 18px;
+  }
+  .champion-title {
+    font-size: 70;
+  }
+  .champion-description {
+    font-size: 16px;
+  }
+  .champion-btn-container {
+    flex-direction: column;
+  }
+  .champion-btn {
+    margin-top: 10px;
+  }
+  .select-champion-container {
+    flex-direction: column;
+    transform: translateY(0);
+  }
+  .select-champion-left {
+    display: none;
+  }
+
+  .champion-btn.play {
+    margin-left: 0;
+  }
+  .champ-vid-container {
+    display: none;
+  }
+
+  .mobile-select-button > span {
+    color: rgb(186, 194, 204);
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+
+  .champion-btn.play {
+    margin-left: 0;
+  }
+  .champ-vid-container {
+    display: none;
+  }
+  .mobile-select-champion-contain {
+    display: flex;
+    align-items: center;
+  }
+  .select-champion-right {
+    width: 100%;
+    max-height: none;
+    transform: translateX(0);
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

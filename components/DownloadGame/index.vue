@@ -13,10 +13,12 @@
         muted
         loop
         style="object-fit: cover; object-position: center center"
-        preload="none"
+        preload="metadata"
       ></video>
     </div>
-    <button class="download-btn">CHƠI MIỄN PHÍ</button>
+    <nuxt-link to="/download">
+      <button class="download-btn">CHƠI MIỄN PHÍ</button>
+    </nuxt-link>
   </div>
 </template>
 
@@ -26,6 +28,7 @@ const video = ref(null);
 const opacityValue = ref(1);
 const transformY = ref(0); // Giá trị transform ban đầu
 const handleScroll = () => {
+  if (window.innerWidth < 992) return;
   const element = download.value;
   const videoEle = video.value;
 

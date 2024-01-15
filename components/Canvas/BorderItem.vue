@@ -31,7 +31,6 @@ const props = defineProps({
 
 const canvas = ref(null);
 onMounted(() => {
-  console.log(canvas.value.width);
   if (canvas.value) {
     const ctx = canvas.value.getContext("2d");
     // Define the dimensions of the rectangle

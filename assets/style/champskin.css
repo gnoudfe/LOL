@@ -1,6 +1,7 @@
+@import url("./animation");
+
 .champ-skin-container {
   position: relative;
-  box-sizing: border-box;
   min-height: 130vh;
 }
 
@@ -84,6 +85,11 @@
   top: 45%;
   left: calc(50% + 10vw);
   z-index: 3;
+  opacity: 0;
+}
+.champ-skin-type-infor-wrapper.first-show {
+  opacity: 1;
+  animation: show-text 3s ease;
 }
 
 .champ-skin-type-heading {
@@ -111,6 +117,7 @@
   letter-spacing: 0.08em;
   padding: 0px 10%;
   margin: 12px auto 0px;
+  color: #fff;
 }
 .champ-skin-type-button {
   display: flex;
@@ -196,4 +203,54 @@
   position: absolute;
   right: -18px;
   bottom: 6px;
+}
+
+@media only screen and (max-width: 768px) {
+  .champ-skin-type-infor-wrapper {
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .champ-skin-type-wrapper {
+    width: 100%;
+    padding-bottom: 100%;
+    height: 500px;
+    top: 10%;
+  }
+  .champ-skin-type-canvas {
+    width: 100%;
+    transform: translateY(60px);
+  }
+  .champ-skin-text-annouce {
+    display: none;
+  }
+  .champ-skin-type-heading {
+    font-size: 16px;
+  }
+  .champ-skin-type-title {
+    font-size: 43px;
+  }
+  .champ-skin-type-para {
+    font-size: 14px;
+  }
+  .champ-skin-type-para,
+  .champ-skin-type-title,
+  .champ-skin-type-heading {
+    color: #000;
+  }
+  .champ-skin-text-annouce {
+    display: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

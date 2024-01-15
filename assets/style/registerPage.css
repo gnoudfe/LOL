@@ -1,0 +1,260 @@
+@import url("./animation.css");
+.register-page-wrapper {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.register-container {
+  height: 100%;
+  background-color: black;
+  position: relative;
+}
+
+.register-background-container {
+  height: 100%;
+  animation: fadeIn 2s ease;
+}
+.register-background-container > img {
+  height: 100%;
+}
+.reigster-container::after {
+  background-image: url("/img/hangtag.svg");
+  content: "";
+  display: block;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  width: 18px;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  height: 200px;
+  top: 0;
+}
+
+.homepage-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+}
+.homepage {
+  display: block;
+  max-width: 150px;
+  width: 150px;
+}
+.homepage-container > a > img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.register-content-container {
+  position: absolute;
+  top: 140px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.register-heading {
+  color: #fff;
+  font-size: 45px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  line-height: 1.16;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: show-item 2s ease;
+}
+
+.register-sub-heading {
+  font-family: Beaufort for LOL, serif;
+  text-align: center;
+  color: #d5b26e;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 1.16;
+  margin: 0 0 20px;
+  font-size: 18px;
+  margin-bottom: 40px;
+  animation: show-item 2s ease;
+}
+.input-groups {
+  margin-top: 70px;
+}
+
+.input-components {
+  border: 0 solid #7e633b;
+  border-bottom-width: 1px;
+  position: relative;
+  padding: 10px 0;
+  margin: 0 15px;
+  animation: show-text 1.5s ease;
+}
+.input-components.error {
+  border-bottom: 2px solid #be1e37;
+}
+.input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: #c4b998;
+}
+
+.label-components {
+  display: block;
+  position: absolute;
+  margin-bottom: 5px;
+  pointer-events: none;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f0e6d2;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  transition: all 0.3s ease-in-out;
+  font-family: "Beaufor", sans-serif;
+}
+.label-components.is-focus {
+  transform: translate(0, -40px);
+  left: 0;
+}
+
+.btn-submit {
+  cursor: pointer;
+  line-height: 1;
+  border: none;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.11);
+  transition: color 0.2s;
+  min-width: 240px;
+  max-width: 100%;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #937341;
+  padding: 23px 25px;
+  background: linear-gradient(180deg, #ecc572 0, #815500);
+  animation: show-text 1s ease;
+}
+
+.btn-submit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+.btn-submit::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #111;
+  z-index: -1;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+
+.btn-submit:hover {
+  color: #c4b998;
+}
+
+.error-msg {
+  position: absolute;
+  color: #be1e37;
+  width: 100%;
+  left: 0;
+  bottom: -30px;
+  font-size: 14px;
+}
+
+.error-icon-container {
+  position: absolute;
+  max-width: 20px;
+  right: 10px;
+  bottom: 20px;
+}
+
+.google-sign-in-container {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  animation: show-item 3s ease;
+}
+.google-sign-in-container > span {
+  color: #fff;
+}
+
+.google-sign-in-button {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  height: 43px;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+  animation: show-item 3s ease;
+}
+.google-sign-in-button > img {
+  width: 20px;
+}
+
+.google-sign-in-button > span {
+  margin-left: 10px;
+  color: #fff;
+}
+
+.download-link {
+  font-weight: 500;
+  text-decoration: none;
+  color: #c4b998;
+  margin-left: 5px;
+  font-size: 16px;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
+.register-background-container > img {
+  object-fit: cover;
+  height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .register-heading {
+    font-size: 23px;
+  }
+  .register-sub-heading {
+    margin-bottom: 0;
+  }
+  form  {
+    margin-top: -30px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

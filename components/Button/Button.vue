@@ -2,12 +2,7 @@
   <div class="" style="cursor: pointer">
     <button class="button defaultSize"><span>Chơi miễn phí</span></button>
     <div class="btn-canvas-container">
-      <canvas
-        ref="cv"
-        :width="props.canvasWidth"
-        :height="props.canvasHeight"
-        style="width: 205px; height: 66px"
-      ></canvas>
+    
     </div>
   </div>
 </template>
