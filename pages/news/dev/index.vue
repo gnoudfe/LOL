@@ -12,7 +12,7 @@
 
 <script setup>
 const { data: dataArticles } = await useFetch(
-  `${import.meta.env.VITE_API_LOL_BASE}allArticles`,
+  `${import.meta.env.NEXT_PUBLIC_VITE_API_LOL_BASE}allArticles`,
   {
     transform: (dataArticles) => {
       return dataArticles.map((item) => ({

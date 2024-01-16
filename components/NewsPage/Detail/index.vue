@@ -94,7 +94,7 @@ const handleLoadMoreNews = async () => {
   stateArticles.isLoading = true;
   try {
     const { data: dataArticles } = await useFetch(
-      `${import.meta.env.VITE_API_LOL_BASE}allArticles?_page=${
+      `${import.meta.env.NEXT_PUBLIC_VITE_API_LOL_BASE}allArticles?_page=${
         stateArticles.currentPage
       }&_limit=${stateArticles.itemPerPage}`,
       {

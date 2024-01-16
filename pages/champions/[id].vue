@@ -10,7 +10,7 @@ const { state } = useAllChampions();
 const route = useRouter();
 
 const { data: detailChampion } = await useFetch(
-  `${import.meta.env.VITE_API_LOL_BASE}allChampions?champion_name=${
+  `${import.meta.env.NEXT_PUBLIC_VITE_API_LOL_BASE}allChampions?champion_name=${
     route.currentRoute.value.params.id
   }`,
   {

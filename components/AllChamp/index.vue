@@ -271,7 +271,7 @@ const handleLoadMoreChampions = async () => {
   state.currentPage++;
   try {
     const { data: MoreChampions } = await useFetch(
-      `${import.meta.env.VITE_API_LOL_BASE}allChampions?_page=${
+      `${import.meta.env.NEXT_PUBLIC_VITE_API_LOL_BASE}allChampions?_page=${
         state.currentPage
       }&_limit=${state.itemPerPage}`,
       {

@@ -10,7 +10,7 @@ const { stateArticles } = useAllArticles();
 if (stateArticles.allArticles.length <= 0) {
   try {
     const { data: allArticles } = await useFetch(
-      `${import.meta.env.VITE_API_LOL_BASE}allArticles?_page=1&_limit=5`,
+      `${import.meta.env.NEXT_PUBLIC_VITE_API_LOL_BASE}allArticles?_page=1&_limit=5`,
       {
         transform: (allArticles) => {
           return allArticles.map((item) => ({

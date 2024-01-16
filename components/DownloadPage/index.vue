@@ -36,7 +36,7 @@
 <script setup>
 const user = useSupabaseUser();
 const handleDownload = () => {
-  window.location = import.meta.env.VITE_API_DOWNLOAD_LINK;
+  window.location = import.meta.env.NEXT_PUBLIC_VITE_API_DOWNLOAD_LINK;
 };
 </script>
 

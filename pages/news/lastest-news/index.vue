@@ -14,7 +14,7 @@
 <script setup>
 const NewsContainer = ref([]);
 const { data: dataArticles } = await useFetch(
-  `${import.meta.env.VITE_API_LOL_BASE}allArticles?_page=1&_limit=6`,
+  `${import.meta.env.NEXT_PUBLIC_VITE_API_LOL_BASE}allArticles?_page=1&_limit=6`,
   {
     transform: (dataArticles) => {
       return dataArticles.map((item) => ({
