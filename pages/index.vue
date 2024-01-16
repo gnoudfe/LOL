@@ -40,11 +40,21 @@
         <RepresentNews />
       </div>
     </section>
+
+    <Loading v-if="isLoading" />
   </div>
 </template>
 
 <script setup>
-
+const isLoading = ref(false);
+const router = useRouter();
+const user = useSupabaseUser();
+if (user.value) {
+  isLoading.value = true;
+  setTimeout(() => {
+    router.push("/download");
+  }, 1000);
+}
 </script>
 
 <style scoped>

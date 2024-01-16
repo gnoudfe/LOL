@@ -127,10 +127,9 @@ const handleInputFocus = () => {
 };
 
 const signInWithGoogle = async () => {
-  const { data } = await supabase.auth.signInWithOAuth({
+  const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: "https://lol-gnoud.vercel.app/download",
       queryParams: {
         access_type: "offline",
         prompt: "consent",
