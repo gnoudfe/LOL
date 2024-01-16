@@ -583,5 +583,5 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-@import url("../../assets/style/championIntroduce.css");
+@import url("../../assets/style/ChampionIntroduce.css");
 </style>
