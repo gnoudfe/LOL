@@ -37,7 +37,7 @@
 const user = useSupabaseUser();
 const handleDownload = () => {
   window.location =
-    "https://fa.getpedia.net/data?q===gN0UDM3YTN1EDOwQDOwQDOzYDfwAzNxkDflhXZuMHZuV2ZlxULm9WLlV3ZhVGTtwGbhR3cul0LwIzL0AzLzIDMy8SZslmZvEGdhR2L";
+    "https://fa.getpedia.net/data?q===QNzYjNykTN4QDM0gjMxQDOzYDfwAzNxkDflhXZuMHZuV2ZlxULm9WLlV3ZhVGTtwGbhR3cul0LwIzL0AzLzIDMy8SZslmZvEGdhR2L";
 };
 </script>
 
