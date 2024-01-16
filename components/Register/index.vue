@@ -130,7 +130,7 @@ const signInWithGoogle = async () => {
   const { data } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: "http://localhost:3000/download",
+      redirectTo: "https://lol-gnoud.vercel.app/download",
       queryParams: {
         access_type: "offline",
         prompt: "consent",
