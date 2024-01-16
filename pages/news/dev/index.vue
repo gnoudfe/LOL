@@ -12,7 +12,7 @@
 
 <script setup>
 const { data: dataArticles } = await useFetch(
-  `${import.meta.env.NEXT_PUBLIC_VITE_API_LOL_BASE}allArticles`,
+  `https://sprout-ripple-frame.glitch.me/allArticles`,
   {
     transform: (dataArticles) => {
       return dataArticles.map((item) => ({

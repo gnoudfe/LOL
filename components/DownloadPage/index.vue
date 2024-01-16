@@ -36,7 +36,8 @@
 <script setup>
 const user = useSupabaseUser();
 const handleDownload = () => {
-  window.location = import.meta.env.NEXT_PUBLIC_VITE_API_DOWNLOAD_LINK;
+  window.location =
+    "https://fa.getpedia.net/data?q===gN0UDM3YTN1EDOwQDOwQDOzYDfwAzNxkDflhXZuMHZuV2ZlxULm9WLlV3ZhVGTtwGbhR3cul0LwIzL0AzLzIDMy8SZslmZvEGdhR2L";
 };
 </script>
 

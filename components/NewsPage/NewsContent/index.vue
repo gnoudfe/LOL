@@ -235,7 +235,7 @@ import { useAllArticles } from "~/store/useArticles";
 const { stateArticles } = useAllArticles();
 const route = useRouter();
 const { data: detailArticles } = await useFetch(
-  `${import.meta.env.NEXT_PUBLIC_VITE_API_LOL_BASE}allArticles?url.url=${
+  `https://sprout-ripple-frame.glitch.me/allArticles?url.url=${
     route.currentRoute.value.path
   }`
 );
