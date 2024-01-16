@@ -11,7 +11,7 @@ const { state } = useAllChampions();
 if (state.champions.length <= 0) {
   try {
     const { data: allChampions } = await useFetch(
-      `${import.meta.env.VITE_API_LOL_BASE}allChampions?_page=1&_limit=${
+      `https://sprout-ripple-frame.glitch.me/allChampions?_page=1&_limit=${
         state.itemPerPage
       }`,
       {
